@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: {{ .Values.app.namespace }}
+  name: {{ .Values.app.name }}
+  annotations:
+    secrets.doppler.com/reload: 'true'
+spec:
+  selector:
+    matchLabels:
+      run: {{ .Values.app.name }}
+  replicas: {{ .Values.app.replicas }}
+  template:
+    metadata:
+      labels:
+        run: {{ .Values.app.name }}
+    spec:
+      containers:
+        - name: {{ .Values.app.container.name }}
+          image: {{ .Values.app.container.image }}
+          ports:
+            - containerPort: {{ .Values.app.container.port }}
+          imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: {{ .Values.secrets.dopplerSecretName }}
+      restartPolicy: Always

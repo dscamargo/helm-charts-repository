@@ -1,0 +1,20 @@
+app:
+  namespace:
+  name:
+  replicas: 1
+  selector:
+    run:
+  container:
+    name:
+    image:
+    port:
+
+secrets:
+  dopplerSecretName:
+
+service:
+  name:
+
+ingress:
+  name:
+  host:

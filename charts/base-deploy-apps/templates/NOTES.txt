@@ -1,0 +1,2 @@
+Release {{ .Values.app.name }} successfully.
+Replicas: {{ .Values.app.replicas }}
