@@ -3,7 +3,17 @@ entries:
   base-deploy-apps:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-03-28T23:15:15.061898-03:00"
+    created: "2023-03-28T23:32:59.449441-03:00"
+    description: A Helm chart for Kubernetes
+    digest: 3b9c29a9a07b411bd298b2a867734686bcb638d9c155141b32d5703104dcb2d1
+    name: base-deploy-apps
+    type: application
+    urls:
+    - https://dscamargo.github.io/helm-charts-repository/base-deploy-apps-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-03-28T23:32:59.448933-03:00"
     description: A Helm chart for Kubernetes
     digest: c5b1a457a2c59be0ed08e7ba0cbcc23cc00eeca25f0dcfd0e2820ad4c581ecf2
     name: base-deploy-apps
@@ -13,7 +23,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-03-28T23:15:15.061616-03:00"
+    created: "2023-03-28T23:32:59.44868-03:00"
     description: A Helm chart for Kubernetes
     digest: e6d532d2a6d37c6ae6279051f02f64a7cd55bb34c8cb35a6c131bc3e6e40f0ff
     name: base-deploy-apps
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://dscamargo.github.io/helm-charts-repository/base-deploy-apps-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-28T23:15:15.060969-03:00"
+generated: "2023-03-28T23:32:59.447173-03:00"
