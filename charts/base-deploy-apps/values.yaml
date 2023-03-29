@@ -13,8 +13,8 @@ secrets:
   dopplerSecretName:
 
 service:
-  name:
+  name: default
 
 ingress:
-  name:
+  name: 
   host:
