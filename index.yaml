@@ -3,7 +3,17 @@ entries:
   base-simple-deployment:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2023-03-29T22:22:26.101612-03:00"
+    created: "2023-03-29T23:08:30.499072-03:00"
+    description: Template helm to deploy applications
+    digest: b3e17169d4e896e9c616ee6a8fa0b8fea82913f399b0782e0f796dbff65a1692
+    name: base-simple-deployment
+    type: application
+    urls:
+    - https://dscamargo.github.io/helm-charts-repository/base-simple-deployment-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-03-29T23:08:30.498706-03:00"
     description: Template helm to deploy applications
     digest: af8bc105fee64f76e6408739d9bad8982ef664f99f2d4419928c19feccba4533
     name: base-simple-deployment
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://dscamargo.github.io/helm-charts-repository/base-simple-deployment-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-29T22:22:26.100803-03:00"
+generated: "2023-03-29T23:08:30.497549-03:00"

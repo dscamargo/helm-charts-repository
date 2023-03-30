@@ -1,17 +1,19 @@
 app:
   namespace:
-  name:
+  name: 
   replicas: 1
   selector:
-    run:
+    run: 
   container:
-    name:
-    image:
-    port:
+    name: 
+    image: 
+    port: 8080
 secrets:
   dopplerSecretName:
 service:
   name: default
 ingress:
   name: 
-  host:
+  host: 
+  path: 
+  enabled: true
