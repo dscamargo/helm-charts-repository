@@ -12,6 +12,7 @@ secrets:
   dopplerSecretName:
 service:
   name: default
+  enabled: true
 ingress:
   name: 
   host: 
