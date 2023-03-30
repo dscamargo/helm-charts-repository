@@ -17,4 +17,5 @@ ingress:
   name: 
   host: 
   path: 
+  is_root: true
   enabled: true
