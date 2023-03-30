@@ -8,13 +8,10 @@ app:
     name:
     image:
     port:
-
 secrets:
   dopplerSecretName:
-
 service:
   name: default
-
 ingress:
   name: 
   host:
