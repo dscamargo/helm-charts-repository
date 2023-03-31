@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Values.app.name }}
+  namespace: {{ .Values.app.namespace }}
+  annotations:
+    secrets.doppler.com/reload: 'true'
+spec:
+  schedule: {{ .Values.app.schedule }}
+  successfulJobsHistoryLimit: {{ .Values.app.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.app.failedJobsHistoryLimit }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: {{ .Values.container.name }}
+              image: {{ .Values.container.image }}
+              imagePullPolicy: Always
+              envFrom:
+              - secretRef:
+                  name: {{ .Values.secrets.dopplerSecretName }}
+          restartPolicy: OnFailure

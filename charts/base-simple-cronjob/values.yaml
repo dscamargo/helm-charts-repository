@@ -1,0 +1,11 @@
+app:
+  namespace: backend
+  name: 
+  schedule: ""
+  successfulJobsHistoryLimit: 2
+  failedJobsHistoryLimit: 2
+  container:
+    name:
+    image:
+secrets:
+  dopplerSecretName:

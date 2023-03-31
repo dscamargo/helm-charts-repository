@@ -1,12 +1,12 @@
 app:
-  namespace:
-  name: 
+  namespace: backend
+  name: test
   replicas: 1
   selector:
-    run: 
+    run: test
   container:
-    name: 
-    image: 
+    name: test
+    image: test
     port: 8080
 secrets:
   dopplerSecretName:
@@ -14,8 +14,8 @@ service:
   name: default
   enabled: true
 ingress:
-  name: 
-  host: 
-  path: 
+  name: test
+  host: test
+  path: test
   is_root: true
   enabled: true
