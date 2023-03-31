@@ -14,8 +14,8 @@ spec:
       template:
         spec:
           containers:
-            - name: {{ .Values.container.name }}
-              image: {{ .Values.container.image }}
+            - name: {{ .Values.app.container.name }}
+              image: {{ .Values.app.container.image }}
               imagePullPolicy: Always
               envFrom:
               - secretRef:
