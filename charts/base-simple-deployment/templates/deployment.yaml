@@ -15,13 +15,12 @@ spec:
       labels:
         app: {{ .Values.app.name }}
     spec:
-      restartPolicy: {{ .Values.app.restartPolicy | default "Always" | quote }}
       containers:
         - name: {{ .Values.app.container.name }}
           image: {{ .Values.app.container.image }}
           ports:
             - containerPort: {{ .Values.app.container.port }}
-          imagePullPolicy: Always
+          imagePullPolicy: {{ .Values.app.imagePullPolicy }}
           envFrom:
             - secretRef:
                 name: {{ .Values.secrets.dopplerSecretName }}
