@@ -8,12 +8,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      run: {{ .Values.app.name }}
+      app: {{ .Values.app.name }}
   replicas: {{ .Values.app.replicas }}
   template:
     metadata:
       labels:
-        run: {{ .Values.app.name }}
+        app: {{ .Values.app.name }}
     spec:
       restartPolicy: Always
       containers:

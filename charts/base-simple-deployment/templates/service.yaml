@@ -5,11 +5,21 @@ metadata:
   namespace: {{ .Values.app.namespace }}
   name: {{ .Values.service.name }}
 spec:
+  type: {{ .Values.service.type }}
   ports:
-    - name: http
-      port: 80
-      targetPort: 8080
-      protocol: TCP
+    {{- range .Values.service.ports}}
+    - port: {{ .port }}
+      {{- if .name }}
+      name: {{ .name }}
+      {{- end}}
+      targetPort: {{ .targetPort }}
+      {{- if eq .type "NodePort" }}
+      nodePort: {{ .nodePort }}
+      {{- end}}
+      {{- if .protocol}}
+      protocol: {{ .protocol }}
+      {{- end}}
+    {{- end}}
   selector:
-    run: {{ .Values.app.name }}
+    app: {{ .Values.service.appSelector }}
 {{ end }}

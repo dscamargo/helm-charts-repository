@@ -2,8 +2,6 @@ app:
   name: test
   namespace: backend
   replicas: 1
-  selector:
-    run: test
   container:
     name: test
     image: test
@@ -11,14 +9,24 @@ app:
 secrets:
   dopplerSecretName: secret-name
 service:
-  name: default
   enabled: true
+  name: app-service
+  appSelector: test
+  ports:
+  - type: NodePort
+    port: 80
+    targetPort: 8080
+    nodePort: 30001
+  - type: ClusterIP
+    name: "http"
+    protocol:
+    port: 80
+    targetPort: 8080
 ingress:
+  enabled: true
   name: test
   host: test
-  path: test
-  is_root: true
-  enabled: true
+  path: "/"
 persistentVolumes:
   enabled: true
   items:

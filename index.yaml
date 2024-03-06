@@ -3,7 +3,7 @@ entries:
   base-simple-cronjob:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-01-14T23:37:38.064269-03:00"
+    created: "2024-03-06T15:46:49.062224-03:00"
     description: Template helm to deploy cronjobs
     digest: 484bd458367caa86f623e663883f41ed8356395854f2e7b16216ad3143e1f134
     name: base-simple-cronjob
@@ -13,7 +13,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-01-14T23:37:38.06404-03:00"
+    created: "2024-03-06T15:46:49.062074-03:00"
     description: Template helm to deploy cronjobs
     digest: 3da4274afd08d5f9a257eb3b38477b50543dd91fa7f4123e2f567ff99455f342
     name: base-simple-cronjob
@@ -24,7 +24,17 @@ entries:
   base-simple-deployment:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-03-06T15:21:30.249489-03:00"
+    created: "2024-03-06T15:46:49.06487-03:00"
+    description: Template helm to deploy applications
+    digest: b9c6f3d819502184f5b9d0107c736ec4fdd1e97e3b155112270a2a92df47f081
+    name: base-simple-deployment
+    type: application
+    urls:
+    - https://dscamargo.github.io/helm-charts-repository/base-simple-deployment-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-03-06T15:46:49.064637-03:00"
     description: Template helm to deploy applications
     digest: 58422f0ffbae2968edd70e272543f7bdacfc98266ef01fe52bd24fd0d1d24253
     name: base-simple-deployment
@@ -34,7 +44,7 @@ entries:
     version: 0.1.8
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-03-06T15:21:30.249265-03:00"
+    created: "2024-03-06T15:46:49.064429-03:00"
     description: Template helm to deploy applications
     digest: 50bc2a7505dbf4ef413be76c8ee329f9f01bc22b26e0c77926074afa68793156
     name: base-simple-deployment
@@ -44,7 +54,7 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-03-06T13:58:10.814227-03:00"
+    created: "2024-03-06T15:46:49.063277-03:00"
     description: Template helm to deploy applications
     digest: dabdb739c50cebd6b31feb4cbd64d208916cce80d834036ec5eda0e07df560d9
     name: base-simple-deployment
@@ -54,7 +64,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-01-14T23:37:38.067592-03:00"
+    created: "2024-03-06T15:46:49.06312-03:00"
     description: Template helm to deploy applications
     digest: 741ab382a8c3c4a6e1fb46a4325408fc4e546fb001c8964a4026965aa0867e78
     name: base-simple-deployment
@@ -64,7 +74,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-01-14T23:37:38.067349-03:00"
+    created: "2024-03-06T15:46:49.062972-03:00"
     description: Template helm to deploy applications
     digest: 7419806e2201d9ab9b104f2a1fb4b929c236145c4814a199c6cd60a35ff5cca4
     name: base-simple-deployment
@@ -74,7 +84,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-01-14T23:37:38.066936-03:00"
+    created: "2024-03-06T15:46:49.062831-03:00"
     description: Template helm to deploy applications
     digest: 5aadf3e9eb36aca40120c4e518a4ef914610dbb82b5694ca470d5b5a23322043
     name: base-simple-deployment
@@ -84,7 +94,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-01-14T23:37:38.064995-03:00"
+    created: "2024-03-06T15:46:49.062685-03:00"
     description: Template helm to deploy applications
     digest: 15af50d07e746fc658737688fe6a9f7281314c5528944046afb9fb9fb671f177
     name: base-simple-deployment
@@ -94,7 +104,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-01-14T23:37:38.064744-03:00"
+    created: "2024-03-06T15:46:49.062524-03:00"
     description: Template helm to deploy applications
     digest: b3e17169d4e896e9c616ee6a8fa0b8fea82913f399b0782e0f796dbff65a1692
     name: base-simple-deployment
@@ -104,7 +114,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-01-14T23:37:38.064514-03:00"
+    created: "2024-03-06T15:46:49.062372-03:00"
     description: Template helm to deploy applications
     digest: af8bc105fee64f76e6408739d9bad8982ef664f99f2d4419928c19feccba4533
     name: base-simple-deployment
@@ -112,4 +122,4 @@ entries:
     urls:
     - https://dscamargo.github.io/helm-charts-repository/base-simple-deployment-0.1.0.tgz
     version: 0.1.0
-generated: "2024-03-06T15:21:30.244506-03:00"
+generated: "2024-03-06T15:46:49.061502-03:00"
