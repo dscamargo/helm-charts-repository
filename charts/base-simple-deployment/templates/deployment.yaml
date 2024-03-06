@@ -15,7 +15,7 @@ spec:
       labels:
         app: {{ .Values.app.name }}
     spec:
-      restartPolicy: Always
+      restartPolicy: {{ .Values.app.restartPolicy | default "Always" | quote }}
       containers:
         - name: {{ .Values.app.container.name }}
           image: {{ .Values.app.container.image }}
@@ -32,12 +32,11 @@ spec:
               name: {{.name}}
             {{- end}}
           {{- end }}
-      
-    {{- if .Values.volumes.enabled }}
-    volumes:
-      {{- range .Values.volumes.items }}
-      - name: {{.name}}
-        persistentVolumeClaim:
-          claimName: {{.persistentVolumeClaimName}}
+      {{- if .Values.volumes.enabled }}
+      volumes:
+        {{- range .Values.volumes.items }}
+        - name: {{.name}}
+          persistentVolumeClaim:
+            claimName: {{.persistentVolumeClaimName}}
+        {{- end }}
       {{- end }}
-    {{- end }}

@@ -2,6 +2,7 @@ app:
   name: test
   namespace: backend
   replicas: 1
+  restartPolicy: Always
   container:
     name: test
     image: test
