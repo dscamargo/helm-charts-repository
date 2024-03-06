@@ -9,12 +9,11 @@ spec:
   ports:
     {{- range .Values.service.ports}}
     - port: {{ .port }}
-      type: {{ .type | default "ClusterIP" | quote }}
       {{- if .name }}
       name: {{ .name }}
       {{- end}}
       targetPort: {{ .targetPort }}
-      {{- if eq .type "NodePort" }}
+      {{- if eq $.Values.service.type "NodePort" }}
       nodePort: {{ .nodePort }}
       {{- end}}
       {{- if .protocol}}
