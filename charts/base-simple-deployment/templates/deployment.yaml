@@ -15,6 +15,7 @@ spec:
       labels:
         run: {{ .Values.app.name }}
     spec:
+      restartPolicy: Always
       containers:
         - name: {{ .Values.app.container.name }}
           image: {{ .Values.app.container.image }}
@@ -24,4 +25,19 @@ spec:
           envFrom:
             - secretRef:
                 name: {{ .Values.secrets.dopplerSecretName }}
-      restartPolicy: Always
+          {{- if .Values.volumes.enabled }}
+          volumeMounts:
+            {{- range .Values.volumes.items }}
+            - mountPath: {{.mountPath}}
+              name: {{.name}}
+            {{- end}}
+          {{- end }}
+      
+    {{- if .Values.volumes.enabled }}
+    volumes:
+      {{- range .Values.volumes.items }}
+      - name: {{.name}}
+        persistentVolumeClaim:
+          claimName: {{.persistentVolumeClaimName}}
+      {{- end }}
+    {{- end }}

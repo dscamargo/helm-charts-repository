@@ -6,9 +6,9 @@ metadata:
   namespace: {{ .Values.app.namespace }}
   annotations:
     kubernetes.io/ingress.class: nginx
-  {{ if ne .Values.ingress.path "/" }}
+  {{- if ne .Values.ingress.path "/" }}
     nginx.ingress.kubernetes.io/rewrite-target: /$2
-  {{ end }}
+  {{- end }}
     nginx.ingress.kubernetes.io/proxy-body-size: 10m
     nginx.ingress.kubernetes.io/configuration-snippet: |
       more_set_headers "X-Forwarded-For $http_x_forwarded_for";
@@ -17,11 +17,11 @@ spec:
     - host: {{ .Values.ingress.host }}
       http:
         paths:
-        {{ if eq .Values.ingress.path "/"}}
+        {{- if eq .Values.ingress.path "/"}}
           - path: /
-        {{ else }}
+        {{- else }}
           - path: {{ .Values.ingress.path }}(/|$)(.*)
-        {{ end }}
+        {{- end }}
             pathType: Prefix
             backend:
               service:

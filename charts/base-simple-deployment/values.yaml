@@ -1,6 +1,6 @@
 app:
-  namespace: backend
   name: test
+  namespace: backend
   replicas: 1
   selector:
     run: test
@@ -9,7 +9,7 @@ app:
     image: test
     port: 8080
 secrets:
-  dopplerSecretName:
+  dopplerSecretName: secret-name
 service:
   name: default
   enabled: true
@@ -19,3 +19,15 @@ ingress:
   path: test
   is_root: true
   enabled: true
+persistentVolume:
+  enabled: true
+  storageCapacity: 10Gi
+  type: local
+  storageClassName: manual
+  hostPath: "/mnt/data"
+volumes:
+  enabled: true
+  items:
+    - name: volume-name
+      mountPath: "/var/lib/..."
+      persistentVolumeClaimName: volume-pvc-name
