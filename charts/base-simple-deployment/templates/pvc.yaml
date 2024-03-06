@@ -1,16 +1,21 @@
-{{- if .Values.persistentVolume.enabled}}
+{{- if .Values.persistentVolumeClaims.enabled}}
+{{- range .Values.persistentVolumeClaims.items}}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ .Values.app.name }}-pvc
-  namespace: {{ .Values.app.namespace }}
+  name: {{.name}}
+  namespace: {{ $.Values.app.namespace }}
   labels:
-    app: {{.Values.app.name}}
+    app: {{ $.Values.app.name }}
 spec:
-  storageClassName: {{ .Values.persistentVolume.storageClassName }}
+  storageClassName: {{ .storageClassName }}
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: {{.Values.persistentVolume.storageCapacity}}
+      storage: {{.storageCapacity}}
+
+---
+
+{{- end}}
 {{- end}}

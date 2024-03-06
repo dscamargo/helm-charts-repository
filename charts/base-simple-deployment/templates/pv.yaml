@@ -1,17 +1,21 @@
-{{- if .Values.persistentVolume.enabled }}
+{{- if .Values.persistentVolumes.enabled }}
+{{- range .Values.persistentVolumes.items }}
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: {{ .Values.app.name }}-pv
+  name: {{ .name }}
   labels:
-    type: {{ .Values.persistentVolume.type }}
-    app: {{ .Values.app.name }}
+    type: {{ .type }}
+    app: {{ $.Values.app.name }}
 spec:
-  storageClassName: {{ .Values.persistentVolume.storageClassName }}
+  storageClassName: {{ .storageClassName }}
   capacity:
-    storage: {{ .Values.persistentVolume.storageCapacity }}
+    storage: {{ .storageCapacity }}
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: {{ .Values.persistentVolume.hostPath }}
+    path: {{ .hostPath }}
+
+---
+{{- end}}
 {{- end}}

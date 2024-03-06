@@ -19,15 +19,23 @@ ingress:
   path: test
   is_root: true
   enabled: true
-persistentVolume:
+persistentVolumes:
   enabled: true
-  storageCapacity: 10Gi
-  type: local
-  storageClassName: manual
-  hostPath: "/mnt/data"
+  items:
+  - name: pv-01
+    storageCapacity: 10Gi
+    storageClassName: manual
+    hostPath: "/mnt/data"
+    type: local
+persistentVolumeClaims:
+  enabled: true
+  items:
+    - name: pvc-01
+      storageCapacity: 10Gi
+      storageClassName: manual
 volumes:
   enabled: true
   items:
-    - name: volume-name
+    - name: volume-name-1
       mountPath: "/var/lib/..."
-      persistentVolumeClaimName: volume-pvc-name
+      persistentVolumeClaimName: pvc-01
