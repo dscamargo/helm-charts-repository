@@ -9,6 +9,7 @@ spec:
   ports:
     {{- range .Values.service.ports}}
     - port: {{ .port }}
+      type: {{ .type | default "ClusterIP" | quote }}
       {{- if .name }}
       name: {{ .name }}
       {{- end}}
