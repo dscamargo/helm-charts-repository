@@ -2,6 +2,8 @@ app:
   namespace: backend
   name: 
   schedule: ""
+  # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  timeZone: "America/Sao_Paulo"
   successfulJobsHistoryLimit: 2
   failedJobsHistoryLimit: 2
   container:
