@@ -8,6 +8,7 @@ metadata:
 spec:
   schedule: {{ .Values.app.schedule }}
   timeZone: {{ .Values.app.timeZone | default "Etc/UTC" | quote }}
+  suspend: {{ .Values.app.suspend | default false }}
   successfulJobsHistoryLimit: {{ .Values.app.successfulJobsHistoryLimit }}
   failedJobsHistoryLimit: {{ .Values.app.failedJobsHistoryLimit }}
   jobTemplate:
