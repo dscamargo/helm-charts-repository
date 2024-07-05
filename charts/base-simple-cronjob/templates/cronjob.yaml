@@ -18,7 +18,10 @@ spec:
           containers:
             - name: {{ .Values.app.container.name }}
               image: {{ .Values.app.container.image }}
-              imagePullPolicy: Always
+              imagePullPolicy: {{ .Values.app.container.imagePullPolicy | default "Always" }}
+              {{- if .Values.app.container.command }}
+              command: {{ .Values.app.container.command }}
+              {{- end}}
               envFrom:
               - secretRef:
                   name: {{ .Values.secrets.dopplerSecretName }}

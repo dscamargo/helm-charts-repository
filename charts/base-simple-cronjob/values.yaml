@@ -10,5 +10,10 @@ app:
   container:
     name: container-name
     image: container-image
+    imagePullPolicy: IfNotPresent
+    command:
+      - /bin/sh
+      - -c
+      - echo "Hello, World!"
 secrets:
   dopplerSecretName: secret-name

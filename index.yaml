@@ -3,7 +3,17 @@ entries:
   base-simple-cronjob:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-03-07T22:04:04.648361-03:00"
+    created: "2024-07-05T19:31:15.567837-03:00"
+    description: Template helm to deploy cronjobs
+    digest: ac4ffdb99b2cfe4a21d9786f7a4dfa3d081e0b6bd0e31aacc3362d312df8f2fc
+    name: base-simple-cronjob
+    type: application
+    urls:
+    - https://dscamargo.github.io/helm-charts-repository/base-simple-cronjob-0.0.5.tgz
+    version: 0.0.5
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-07-05T19:31:15.565945-03:00"
     description: Template helm to deploy cronjobs
     digest: e1515430548de67aa10b6d2566e9067cfeeeb7b2fe5c1411582b7361231fecca
     name: base-simple-cronjob
