@@ -20,7 +20,8 @@ spec:
               image: {{ .Values.app.container.image }}
               imagePullPolicy: {{ .Values.app.container.imagePullPolicy | default "Always" }}
               {{- if .Values.app.container.command }}
-              command: {{ .Values.app.container.command }}
+              command: {{- range .Values.app.container.command }}
+                - {{ . }} {{- end}}
               {{- end}}
               envFrom:
               - secretRef:
