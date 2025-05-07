@@ -18,6 +18,9 @@ spec:
       containers:
         - name: {{ .Values.app.container.name }}
           image: {{ .Values.app.container.image }}
+          {{- if .Values.app.container.command }}
+          command: {{ .Values.app.container.command }}
+          {{- end }}
           ports:
             - containerPort: {{ .Values.app.container.port }}
           imagePullPolicy: {{ .Values.app.imagePullPolicy }}
