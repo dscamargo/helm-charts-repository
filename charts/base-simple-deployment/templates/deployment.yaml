@@ -24,9 +24,18 @@ spec:
           ports:
             - containerPort: {{ .Values.app.container.port }}
           imagePullPolicy: {{ .Values.app.imagePullPolicy }}
+          {{- if .Values.secrets.dopplerSecretName }}
           envFrom:
             - secretRef:
                 name: {{ .Values.secrets.dopplerSecretName }}
+          {{- end }}
+          {{- if .Values.app.container.env }}
+          env:
+            {{- range .Values.app.container.env }}
+            - name: {{ .name }}
+              value: {{ .value | quote }}
+            {{- end }}
+          {{- end }}
           {{- if .Values.volumes.enabled }}
           volumeMounts:
             {{- range .Values.volumes.items }}

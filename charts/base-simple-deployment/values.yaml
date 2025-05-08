@@ -8,6 +8,11 @@ app:
     image: test
     port: 8080
     command: ["/bin/sh", "-c", "echo Hello Kubernetes! && sleep 3600"]
+    env:
+      - name: TEST_ENV
+        value: test
+      - name: TEST_ENV_2
+        value: test2
 secrets:
   dopplerSecretName: secret-name
 service:
