@@ -1,0 +1,4 @@
+{{- range $jobname, $job := .Values.jobs }}
+  Release {{ $jobname }} successfully.
+  Image: {{ $job.name }}
+{{- end}}

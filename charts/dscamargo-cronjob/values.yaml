@@ -1,0 +1,22 @@
+cronjob:
+  name: my-cronjob
+  namespace: backend
+  schedule: "0 */4 * * *"
+  # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  timeZone: "America/Sao_Paulo"
+  suspend: false
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  restartPolicy: OnFailure
+  secrets:
+    - name: any-secret
+    - name: doppler
+  container:
+    name: container-name
+    image: container-image
+    imagePullPolicy: Always
+    command:
+    - /bin/sh
+    - -c
+    - echo "Hello, World!"
+    

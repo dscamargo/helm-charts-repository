@@ -1,0 +1,39 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Values.cronjob.name }}
+  namespace: {{ .Values.cronjob.namespace }}
+  annotations:
+    app.kubernetes.io/version: {{ .Chart.AppVersion }}
+    {{- if include "chart.checkDopplerUsage" $ }}
+    secrets.doppler.com/reload: "true"
+    {{- end}}
+spec:
+  schedule: {{ .Values.cronjob.schedule | quote }}
+  timeZone: {{ .Values.cronjob.timeZone | default "Etc/UTC" | quote }}
+  suspend: {{ .Values.cronjob.suspend | default false }}
+  successfulJobsHistoryLimit: {{ .Values.cronjob.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.cronjob.failedJobsHistoryLimit }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: {{ .Values.cronjob.restartPolicy | default "OnFailure"}}
+          containers:
+            - name: {{ .Values.cronjob.container.name }}
+              image: {{ .Values.cronjob.container.image }}
+              imagePullPolicy: {{ .Values.cronjob.container.imagePullPolicy | default "Always" }}
+              {{- if .Values.cronjob.container.command }}
+              command: {{- range .Values.cronjob.container.command }}
+                - {{ . }} {{- end}}
+              {{- end}}
+
+              {{- if .Values.cronjob.secrets }}
+              envFrom:
+                {{- range .Values.cronjob.secrets }}
+                - secretRef:
+                    name: {{ .name }}
+                {{- end }}
+              {{- end }}
+
+
