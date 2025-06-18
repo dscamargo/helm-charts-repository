@@ -24,10 +24,12 @@ spec:
           ports:
             - containerPort: {{ .Values.app.container.port }}
           imagePullPolicy: {{ .Values.app.imagePullPolicy }}
-          {{- if .Values.secrets.dopplerSecretName }}
+          {{- if .Values.secrets }}
           envFrom:
+            {{- range .Values.secrets }}
             - secretRef:
-                name: {{ .Values.secrets.dopplerSecretName }}
+                name: {{ .name }}
+            {{- end }}
           {{- end }}
           {{- if .Values.app.container.env }}
           env:
