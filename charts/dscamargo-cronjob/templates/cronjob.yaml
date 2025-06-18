@@ -5,9 +5,7 @@ metadata:
   namespace: {{ .Values.cronjob.namespace }}
   annotations:
     app.kubernetes.io/version: {{ .Chart.AppVersion }}
-    {{- if include "chart.checkDopplerUsage" $ }}
     secrets.doppler.com/reload: "true"
-    {{- end}}
 spec:
   schedule: {{ .Values.cronjob.schedule | quote }}
   timeZone: {{ .Values.cronjob.timeZone | default "Etc/UTC" | quote }}

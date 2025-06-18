@@ -10,7 +10,7 @@ cronjob:
   restartPolicy: OnFailure
   secrets:
     - name: any-secret
-    - name: doppler
+    - name: dopplersecret
   container:
     name: container-name
     image: container-image
