@@ -1,0 +1,34 @@
+app:
+  name: my-app
+  namespace: backend
+  restartPolicy: Always
+  replicas: 1
+  container:
+    - name: container-app
+      image: ""
+      port: 8080
+      imagePullPolicy: Always
+      secret: ""
+      env: []
+
+service:
+  enabled: true
+  ports:
+    - type: ClusterIP
+      name: http
+      port: 80
+      targetPort: 8080
+      nodePort: 30000
+      protocol: TCP
+
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - example.com.br
+      secretName: example-tls
+  rule:
+    host: example.com.br
+    path: /
+    pathType: ImplementationSpecific
