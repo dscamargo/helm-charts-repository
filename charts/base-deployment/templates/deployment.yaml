@@ -37,4 +37,19 @@ spec:
           {{- end }}
         {{- end }}
 
+        {{- if .Values.app.livenessProbe.enabled }}
+        livenessProbe:
+          {{- omit .Values.app.livenessProbe "enabled" | toYaml |  nindent 10 }}
+        {{- end}}
+        {{- if .Values.app.readinessProbe.enabled }}
+        readinessProbe:
+          {{- omit .Values.app.readinessProbe "enabled" | toYaml |  nindent 10 }}
+        {{- end}}
+        {{- if .Values.app.startupProbe.enabled }}
+        startupProbe:
+          {{- omit .Values.app.startupProbe "enabled" | toYaml |  nindent 10 }}
+        {{- end}}
+
+
+
       

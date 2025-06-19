@@ -3,7 +3,17 @@ entries:
   base-deployment:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2025-06-19T17:38:01.772141-03:00"
+    created: "2025-06-19T18:43:41.232305-03:00"
+    description: Template helm to deploy applications
+    digest: 9a3b6f1a716aaf2ba72d16ff4a56d308c14bf0d94cc6262939771149ba4e4d92
+    name: base-deployment
+    type: application
+    urls:
+    - https://dscamargo.github.io/helm-charts-repository/base-deployment-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2025-06-19T18:43:41.232094-03:00"
     description: Template helm to deploy applications
     digest: 434534c3c1d867c50d8103d21d53d1874efa554c4c60cf7b0ae76b1a799b9291
     name: base-deployment
@@ -13,7 +23,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2025-06-19T17:38:01.771955-03:00"
+    created: "2025-06-19T18:43:41.231774-03:00"
     description: Template helm to deploy applications
     digest: 6e326f2243c3c46bea35991c8c428e574da220d272834077be784878a9450261
     name: base-deployment
@@ -24,7 +34,7 @@ entries:
   dscamargo-cronjob:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2025-06-19T17:38:01.77279-03:00"
+    created: "2025-06-19T18:43:41.233928-03:00"
     description: Template helm to deploy cronjobs
     digest: c098d634543ab22b625416efe8c433ac2b38c4e6a68e43b9d1da269271a192de
     name: dscamargo-cronjob
@@ -34,7 +44,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2025-06-19T17:38:01.77251-03:00"
+    created: "2025-06-19T18:43:41.232607-03:00"
     description: Template helm to deploy cronjobs
     digest: 8e5301ff0283acc731ac1c3e3bdf254390d27188c828d4022676422e547ceed9
     name: dscamargo-cronjob
@@ -42,4 +52,4 @@ entries:
     urls:
     - https://dscamargo.github.io/helm-charts-repository/dscamargo-cronjob-0.0.1.tgz
     version: 0.0.1
-generated: "2025-06-19T17:38:01.771152-03:00"
+generated: "2025-06-19T18:43:41.230946-03:00"

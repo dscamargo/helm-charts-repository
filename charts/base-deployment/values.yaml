@@ -10,6 +10,29 @@ app:
     imagePullPolicy: Always
     secret: ""
     env: []
+  livenessProbe:
+    enabled: true
+    httpGet:
+      path: /health
+      port: 8080
+    initialDelaySeconds: 5
+    timeoutSeconds: 1
+    periodSeconds: 10
+    failureThreshold: 3
+  readinessProbe:
+    enabled: true
+    httpGet:
+      path: /health
+      port: 8080
+    initialDelaySeconds: 5
+    periodSeconds: 5
+  startupProbe:
+    enabled: false
+    httpGet:
+      path: /health
+      port: liveness-port
+    failureThreshold: 30
+    periodSeconds: 10
 
 service:
   enabled: true
