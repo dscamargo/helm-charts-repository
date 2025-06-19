@@ -11,7 +11,7 @@ app:
     secret: ""
     env: []
   livenessProbe:
-    enabled: true
+    enabled: false
     httpGet:
       path: /health
       port: 8080
@@ -20,7 +20,7 @@ app:
     periodSeconds: 10
     failureThreshold: 3
   readinessProbe:
-    enabled: true
+    enabled: false
     httpGet:
       path: /health
       port: 8080
