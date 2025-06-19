@@ -4,10 +4,10 @@ app:
   replicas: 1
   imagePullPolicy: Always
   container:
-    name: test
-    image: test
+    name: ""
+    image: ""
     port: 8080
-    command: ["sh", "-c", "echo hello"]
+    command: []
     env: []
 secrets:
   - name: secret-name

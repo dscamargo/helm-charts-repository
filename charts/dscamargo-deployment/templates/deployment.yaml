@@ -19,7 +19,9 @@ spec:
         - name: {{ .Values.app.container.name }}
           image: {{ .Values.app.container.image }}
           {{- if .Values.app.container.command }}
-          command: {{ .Values.app.container.command }}
+          command: {{- range .Values.app.container.command }}
+            - {{ . }} {{- end}}
+              {{- end}}
           {{- end }}
           ports:
             - containerPort: {{ .Values.app.container.port }}
