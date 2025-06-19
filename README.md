@@ -3,7 +3,7 @@
 #### Create package
 
 ```bash
-helm package charts/dscamargo-deployment
+helm package charts/base-deployment
 ```
 
 ---

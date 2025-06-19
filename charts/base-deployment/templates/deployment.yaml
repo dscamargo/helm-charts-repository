@@ -17,26 +17,24 @@ spec:
     spec:
       restartPolicy: {{ .Values.app.restartPolicy | default "Always" | quote }}
       containers:
-      {{- range $index, $container := .Values.app.container }}
-        - name: {{ $container.name | default $.Values.app.name }}
-          image: {{ $container.image }}
-          ports:
-            - containerPort: {{ $container.port }}
-          imagePullPolicy: {{ $container.imagePullPolicy }}
+      - name: {{ .Values.app.container.name | default .Values.app.name }}
+        image: {{ .Values.app.container.image }}
+        ports:
+          - containerPort: {{ .Values.app.container.port }}
+        imagePullPolicy: {{ .Values.app.container.imagePullPolicy }}
 
-          {{- if $container.secret }}
-          envFrom:
-            - secretRef:
-                name: {{ $container.secret }}
-          {{- end}}
+        {{- if .Values.app.container.secret }}
+        envFrom:
+          - secretRef:
+              name: {{ .Values.app.container.secret }}
+        {{- end}}
 
-          {{- if $container.env }}
-          env:
-            {{- range $envIndex, $env := $container.env }}
-            - name: {{ $env.name }}
-              value: {{ $env.value | quote }}
-            {{- end }}
+        {{- if .Values.app.container.env }}
+        env:
+          {{- range $envIndex, $env := .Values.app.container.env }}
+          - name: {{ $env.name }}
+            value: {{ $env.value | quote }}
           {{- end }}
-      {{- end}}
+        {{- end }}
 
       

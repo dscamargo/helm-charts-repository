@@ -1,6 +1,4 @@
-{{ range .Values.app.container }}
-Release {{ $.Values.app.name }} successfully.
-Replicas: {{ $.Values.app.replicas }}
-Image: {{ .image }}
-{{ end }}
+Release {{ .Values.app.name }} successfully.
+Replicas: {{ .Values.app.replicas }}
+Image: {{ .Values.app.container.name }}
 

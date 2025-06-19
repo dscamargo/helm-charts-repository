@@ -4,12 +4,12 @@ app:
   restartPolicy: Always
   replicas: 1
   container:
-    - name: container-app
-      image: ""
-      port: 8080
-      imagePullPolicy: Always
-      secret: ""
-      env: []
+    name: container-app
+    image: ""
+    port: 8080
+    imagePullPolicy: Always
+    secret: ""
+    env: []
 
 service:
   enabled: true
